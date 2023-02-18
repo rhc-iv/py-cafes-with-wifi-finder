@@ -1,1 +1,24 @@
-
+<link rel="stylesheet" type="text/css" href="static/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/d22cf1bdb0.js" crossorigin="anonymous"></script>
+<div class="icon">
+<i class="fa-solid fa-mug-hot fa-2xl"></i>
+</div>
+<div class="welcome">
+  <h2>Local Cafés WIth Free WiFi</h2>
+</div>
+<div class="input">
+<form method="POST" action="{{ url_for('cafes') }}">
+    <label for="city">Select a city:</label>
+    <select id="city" name="city">
+        {% for city in cities %}
+            <option value="{{ city[0] }}">{{ city[0] }}</option>
+        {% endfor %}
+    </select>
+  <p>
+    <button type="submit" class="button">Submit</button>
+  </p>
+</form>
+</div>
